@@ -65,7 +65,7 @@ gcloud compute firewall-rules list --filter="network:kubernetes-the-hard-way"
 ```
 NAME                                    NETWORK                  DIRECTION  PRIORITY  ALLOW                 DENY  DISABLED
 kubernetes-the-hard-way-allow-external  kubernetes-the-hard-way  INGRESS    1000      tcp:22,tcp:6443,icmp        False
-kubernetes-the-hard-way-allow-internal  kubernetes-the-hard-way  INGRESS    1000      tcp,udp,icmp                Fals
+kubernetes-the-hard-way-allow-internal  kubernetes-the-hard-way  INGRESS    1000      tcp,udp,icmp                False
 ```
 
 ### Kubernetesの公開IPアドレス
@@ -77,7 +77,7 @@ gcloud compute addresses create kubernetes-the-hard-way \
   --region $(gcloud config get-value compute/region)
 ```
 
-`kubernetes-the-hard`という名前の静的IPアドレスがデフォルトリージョンに作成されたことを確認します:
+`kubernetes-the-hard-way`という名前の静的IPアドレスがデフォルトリージョンに作成されたことを確認します:
 
 ```
 gcloud compute addresses list --filter="name=('kubernetes-the-hard-way')"
